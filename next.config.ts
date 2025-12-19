@@ -6,8 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/greenscape-landscaping',
-  assetPrefix: '/greenscape-landscaping',
+  // Only set basePath for GitHub Pages deployment
+  basePath: process.env.GITHUB_PAGES === 'true' ? '/greenscape-landscaping' : '',
+  assetPrefix: process.env.GITHUB_PAGES === 'true' ? '/greenscape-landscaping' : '',
 };
 
 export default nextConfig;
